@@ -3,12 +3,10 @@
 const express = require("express");
 const router = express.Router();
 
-app.get("/", (req, res) => {
-    res.render("home/index");
-});
+const ctrl = require("./home.ctrl");
 
-app.get("/login", (req, res) => {
-    res.render("home/login");
-});
+router.get("/", ctrl.home);
+
+router.get("/login", ctrl.login);
 
 module.exports = router;
